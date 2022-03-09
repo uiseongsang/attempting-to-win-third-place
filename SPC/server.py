@@ -1,7 +1,8 @@
 # server.py
-from flask import Flask, request
+from flask import Flask, request, send_file
 import sqlite3
 import json
+import urllib 
 
 
 db_filename = "./inventory.db"
@@ -64,3 +65,14 @@ def update_item():
             "Image": result[3],
             }), 201
     return {"error": "Request must be JSON"}, 415
+
+@app.route("/image")
+def get_image():
+    """
+    Return a picture for the requested path
+    """
+    name = request.query_string.decode('ascii') # example: http://127.0.0.1:5000/image?path=Hot Breakfast/Breakfast Sandwiches & Wraps/Bacon, Gouda & Egg Sandwich.png
+    name = name.replace("path=", '')
+    path = urllib.parse.unquote(name)
+    filename = '../Image/'+path
+    return send_file(filename, mimetype='image/gif')
