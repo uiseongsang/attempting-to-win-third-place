@@ -27,6 +27,22 @@ def get_item():
         "Image": result[3],
     })
 
+@app.route("/", methods=["GET"])
+def get_all():
+    """
+    Get item number from get request and return item info
+    """
+    #example: http://127.0.0.1:5000/
+    result = c.execute(f"SELECT SKU, Name, Quantity, ImagePath FROM Inventory").fetchall() #using item id from the get request
+    print(result)
+    results = str(list(map(lambda x: json.dumps({
+        "SKU" : x[0],
+        "Name": x[1],
+        "QTY" : x[2],
+        "Image": x[3],
+    }), result)))
+    return results
+
 @app.route("/item", methods=["POST"])
 def add_item():
     """
