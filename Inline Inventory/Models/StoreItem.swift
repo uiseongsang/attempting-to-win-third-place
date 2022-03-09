@@ -14,5 +14,4 @@ struct StoreItem: Identifiable, Codable {
     let quantity: Int
     let productImage: String?
     let available: Bool
-    let result: [StoreItem]
 }

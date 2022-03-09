@@ -16,7 +16,7 @@ class ServerViewModel: ObservableObject {
     
     //MARK: Func to connect to the database API
     func fetchStoreData() {
-      let api = "" //FIXME: Needs correct URL
+      let api = " http://127.0.0.1:5000/" 
       guard let url = URL(string: api) else { return }
       URLSession.shared.dataTask(with: url) { (data, response, error) in
         do {
@@ -33,4 +33,6 @@ class ServerViewModel: ObservableObject {
         }
        }.resume()
     }
+    
+    
 }
