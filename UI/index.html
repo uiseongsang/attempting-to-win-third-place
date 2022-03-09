@@ -28,7 +28,7 @@
     <!-- Header -->
     <div class="d-flex p-3 mb-2 bg-success text-white" id="header">
       <div class="me-auto">
-        <div><h1>Inventory Management</h1></div>
+        <div><h1 class="pt-1">Inventory Management</h1></div>
       </div>
       <div class="d-flex flex-row-reverse">
         <div>
@@ -93,6 +93,7 @@
         role="tabpanel"
         aria-labelledby="nav-item-availability-tab"
       >
+        <!-- Table of food items -->
         <div class="container">
           <div class="row">
             <div class="col-8 fw-bold border p-2">Food</div>
@@ -104,6 +105,12 @@
             <div class="col border p-2">584739</div>
             <div class="col border p-2">45</div>
           </div>
+          <!-- Button to toggle items on and off -->
+          <div class="d-flex mt-4">
+            <button type="button" class="btn btn-outline-danger flex-fill">
+              Turn off on MO&P
+            </button>
+          </div>
         </div>
       </div>
       <!-- IMS -->
@@ -113,9 +120,14 @@
         role="tabpanel"
         aria-labelledby="nav-ims-tab"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus placeat
-        alias, sapiente qui eos maxime aut quo nesciunt rem eaque, provident
-        magni voluptatum quasi officia eius. Rerum eveniet quis eum?
+        <div class="container">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            placeat alias, sapiente qui eos maxime aut quo nesciunt rem eaque,
+            provident magni voluptatum quasi officia eius. Rerum eveniet quis
+            eum?
+          </p>
+        </div>
       </div>
       <!-- Merch Lookup -->
       <div
@@ -124,7 +136,7 @@
         role="tabpanel"
         aria-labelledby="nav-merch-lookup-tab"
       >
-        <form class="d-flex p-4">
+        <form class="d-flex p-3">
           <input
             class="form-control me-2"
             type="search"
