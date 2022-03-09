@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 import sqlite3
 
 
-db_filename = "inventory.db"
+db_filename = "./inventory.db"
 
 conn = sqlite3.connect(db_filename)
 c = conn.cursor()
@@ -15,8 +15,8 @@ def get_item():
     """
     Get item number from get request and return item info
     """
-    item = request.args[0] #Don't know if this will work
-    c.execute(f"SELECT * FROM Inventory WHERE skew = {item}")#using item id from the get request
+    id = request.args['skew']  #example: http://127.0.0.1:5000/item?skew=1 (not working right now)
+    c.execute(f"SELECT * FROM Inventory WHERE Skew = {id}")#using item id from the get request
     result = c.fetchall()
     #might need to do something to image
     return jsonify(result)
