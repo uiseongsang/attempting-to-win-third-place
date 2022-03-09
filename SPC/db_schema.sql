@@ -2,5 +2,6 @@ CREATE TABLE [Inventory] (
 	[Skew] INTEGER  NOT NULL PRIMARY KEY, 
 	[Name] NVARCHAR(50)  NOT NULL,
 	[Quantity] INTEGER  NOT NULL,
-	[ImagePath] NVARCHAR(50) NOT NULL
+	[ImagePath] NVARCHAR(50) NOT NULL,
+	[Threshold] INTEGER  NOT NULL
 ); 
