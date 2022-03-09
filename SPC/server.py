@@ -20,6 +20,15 @@ def get_item():
     #might need to do something to image
     return jsonify(result)
 
+@app.route("/item", methods=["POST"])
+def add_item():
+    if request.is_json:
+        item = request.get_json()
+        last_item = c.execute(f"SELECT Skew FROM Inventory ORDER BY Skew DESC").fetchall()[0]
+        c.execute(f"INSERT INTO Inventory VALUES({last_item+1}, {item.name}, {item.quantity}, {item.image}, {item.threshold});")
+        c.commit()
+        return jsonify(c.execute(f"SELECT * FROM Inventory WHERE Skew = {last_item+1}").fetchall()), 201
+    return {"error": "Request must be JSON"}, 415
 
 # countries = [
 #     {"id": 1, "name": "Thailand", "capital": "Bangkok", "area": 513120},
