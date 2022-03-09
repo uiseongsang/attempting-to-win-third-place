@@ -15,8 +15,8 @@ def get_item():
     """
     Get item number from get request and return item info
     """
-    id = request.args['skew']  #example: http://127.0.0.1:5000/item?skew=1 (not working right now)
-    result = c.execute(f"SELECT * FROM Inventory WHERE Skew = {id}").fetchall()#using item id from the get request
+    id = request.args['skew']  #example: http://127.0.0.1:5000/item?skew=1
+    result = c.execute(f"SELECT * FROM Inventory WHERE Skew = {id}").fetchall() #using item id from the get request
     #might need to do something to image
     return jsonify(result)
 
