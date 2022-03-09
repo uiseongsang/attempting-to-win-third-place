@@ -1,0 +1,9 @@
+to run server:
+flask run
+
+to create and fill db:
+sqlite3 inventory.db < db_schema.sql
+sqlite3 inventory.db < db_loader.sql
+
+to drop inventory table:
+delete the db file
