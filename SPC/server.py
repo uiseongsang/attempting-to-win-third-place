@@ -34,7 +34,6 @@ def get_all():
     """
     #example: http://127.0.0.1:5000/
     result = c.execute(f"SELECT SKU, Name, Quantity, ImagePath FROM Inventory").fetchall() #using item id from the get request
-    print(result)
     results = str(list(map(lambda x: json.dumps({
         "SKU" : x[0],
         "Name": x[1],
