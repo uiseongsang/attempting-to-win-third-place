@@ -16,7 +16,7 @@ class ServerViewModel: ObservableObject {
     
     //MARK: Func to connect to the database API
     func fetchStoreData() {
-      let api = ""//FIXME: Needs correct URL
+      let api = "" //FIXME: Needs correct URL
       guard let url = URL(string: api) else { return }
       URLSession.shared.dataTask(with: url) { (data, response, error) in
         do {
