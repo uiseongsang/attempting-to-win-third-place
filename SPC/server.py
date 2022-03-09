@@ -34,10 +34,9 @@ def add_item():
     """
     if request.is_json:
         item = request.get_json()
-        last_item = c.execute(f"SELECT SKU FROM Inventory ORDER BY Skew DESC").fetchall()[0]
+        last_item = c.execute(f"SELECT SKU FROM Inventory ORDER BY Skew DESC").fetchall()[0][0]
         # values(sku, name, qty, imagepath, lst)
-        c.execute(f"INSERT INTO Inventory VALUES({last_item+1}, {item.name}, {item.qty}, {item.image}, {item.lst});")
-        c.commit()
+        c.execute(f"INSERT INTO Inventory VALUES({last_item+1}, {item['name']}, {item['qty']}, {item['image']}, 5);")
         result = c.execute(f"SELECT * FROM Inventory WHERE SKU = {last_item+1}").fetchall()[0]
         return json.dumps({
             "SKU" : result[0],
@@ -55,9 +54,8 @@ def update_item():
     if request.is_json:
         item = request.get_json()
         # values(sku, name, qty, imagepath, lst)
-        c.execute(f"UPDATE Inventory SET Quantity = {item.qty} WHERE SKU = {item.sku};")
-        c.commit()
-        result = c.execute(f"SELECT * FROM Inventory WHERE SKU = {item.sku}").fetchall()[0]
+        c.execute(f"UPDATE Inventory SET Quantity = {item['qty']} WHERE SKU = {item['sku']};")
+        result = c.execute(f"SELECT * FROM Inventory WHERE SKU = {item['sku']}").fetchall()[0]
         return json.dumps({
             "SKU" : result[0],
             "Name": result[1],
