@@ -11,8 +11,9 @@ import SwiftUI
 
 struct StoreItem:Identifiable, Decodable {
     var id: Int?
-    var SKU: Int
-    var QTY: Int
-    var Image: String
-    var Threshold: Int
+    let SKU: Int
+    let Name: String
+    let QTY: Int
+    let Image: String
+    let Threshold: Int
 }
