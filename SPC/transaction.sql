@@ -3,7 +3,8 @@ CREATE TABLE [Transaction] (
 	[SKU] INTEGER  NOT NULL,
 	[Quantity] INTEGER  NOT NULL,
 	[Order_type] NVARCHAR(50) NOT NULL,
-	[Date] NVARCHAR(50)  NOT NULL
+	[Date] NVARCHAR(50)  NOT NULL,
+	FOREIGN KEY (SKU) REFERENCES Inventory
 ); 
 
 INSERT INTO Transaction VALUES(1, 2 , 3 , 'POS', '03-09-22');
