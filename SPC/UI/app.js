@@ -2,7 +2,7 @@
 
 // Item Availability
 const mopToggleBtn = document.querySelector("#mop-toggle-btn"); //toggle btn
-const AvailabilityContainer = document.querySelector("#availability-container"); //Availability table
+const availabilityContainer = document.querySelector("#availability-container"); //Availability table
 
 // IMS
 const imsSaveBtn = document.querySelector("#ims-save-btn"); //save btn
