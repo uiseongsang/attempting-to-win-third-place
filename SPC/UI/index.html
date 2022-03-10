@@ -101,21 +101,25 @@
         <div class="container">
           <div class="container shadow">
             <div class="row">
-              <div class="col-2 fw-bold border p-2">SKU</div>
-              <div class="col-5 fw-bold border p-2">Name</div>
-              <div class="col-1 fw-bold border p-2">Qty</div>
-              <div class="col-2 fw-bold border p-2">Image</div>
-              <div class="col-2 fw-bold border p-2">Threshold</div>
+              <div class="col-3 fw-bold border p-2 text-center">Image</div>
+              <div class="col-5 fw-bold border p-2 text-center">Name</div>
+              <div class="col-2 fw-bold border p-2 text-center">Qty</div>
+              <div class="col-2 fw-bold border p-2 text-center">Threshold</div>
             </div>
             <div class="row">
               <!-- {% for row in items %} -->
-              <div class="col-2 fw-bold border p-2">{{ row[0] }}</div>
-              <div class="col-5 fw-bold border p-2">{{ row[1] }}</div>
-              <div class="col-1 fw-bold border p-2">{{ row[2] }}</div>
-              <div class="col-2 border p-2">
+              <div class="col-3 border p-2 text-center">
                 <img src="{{row[3]}}" alt="food" height="50" width="50" />
               </div>
-              <div class="col-2 fw-bold border p-2">{{ row[4] }}</div>
+              <div class="col-5 fw-bold border p-2 text-center">
+                {{ row[1] }}
+              </div>
+              <div class="col-2 fw-bold border p-2 text-center">
+                {{ row[2] }}
+              </div>
+              <div class="col-2 fw-bold border p-2 text-center">
+                {{ row[4] }}
+              </div>
               <!-- {% endfor %} -->
             </div>
           </div>
@@ -147,7 +151,7 @@
         </div>
 
         <!-- Table -->
-        <div class="container">
+        <div class="container shadow">
           <!-- Top row -->
           <div class="row">
             <div class="col-3 fw-bold border p-3 text-center">On Hand Qty</div>
