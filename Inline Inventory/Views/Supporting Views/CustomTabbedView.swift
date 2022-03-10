@@ -27,9 +27,9 @@ struct CustomTabbedView: View {
     }  
 }
 
-//
-//struct CustomTabbedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CustomTabbedView()
-//    }
-//}
+
+struct CustomTabbedView_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTabbedView(tabIndex: .constant(0))
+    }
+}

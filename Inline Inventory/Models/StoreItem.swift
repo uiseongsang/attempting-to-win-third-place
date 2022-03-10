@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-//MARK: Model of the things a store item consists of
-struct StoreItem: Identifiable, Codable {
-    var id: Int
-    let name: String
-    let quantity: Int
-    let productImage: String?
-    let Threshold: Int
+
+struct StoreItem:Identifiable, Decodable {
+    var id: Int?
+    var SKU: Int
+    var QTY: Int
+    var Image: String
+    var Threshold: Int
 }

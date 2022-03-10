@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Inline_InventoryApp: App {
+    var network = Network()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(network)
         }
     }
 }

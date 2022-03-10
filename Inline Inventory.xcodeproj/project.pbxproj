@@ -19,7 +19,7 @@
 		DFD3029127D8389300CBFEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFD3029027D8389300CBFEDA /* Assets.xcassets */; };
 		DFD3029427D8389300CBFEDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFD3029327D8389300CBFEDA /* Preview Assets.xcassets */; };
 		DFD3029C27D8396000CBFEDA /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3029B27D8396000CBFEDA /* StoreItem.swift */; };
-		DFD302A127D83BA000CBFEDA /* ServerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD302A027D83BA000CBFEDA /* ServerViewModel.swift */; };
+		DFD302A127D83BA000CBFEDA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD302A027D83BA000CBFEDA /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		DFD3029027D8389300CBFEDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFD3029327D8389300CBFEDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFD3029B27D8396000CBFEDA /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
-		DFD302A027D83BA000CBFEDA /* ServerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModel.swift; sourceTree = "<group>"; };
+		DFD302A027D83BA000CBFEDA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 		DFD3029E27D83B4D00CBFEDA /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				DFD302A027D83BA000CBFEDA /* ServerViewModel.swift */,
+				DFD302A027D83BA000CBFEDA /* Network.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF6DBEE427D958170043977F /* IMSView.swift in Sources */,
-				DFD302A127D83BA000CBFEDA /* ServerViewModel.swift in Sources */,
+				DFD302A127D83BA000CBFEDA /* Network.swift in Sources */,
 				DF6DBEEB27D959AA0043977F /* View+Extension.swift in Sources */,
 				DF6DBEE027D956460043977F /* CustomTabbedView.swift in Sources */,
 				DFD3029C27D8396000CBFEDA /* StoreItem.swift in Sources */,

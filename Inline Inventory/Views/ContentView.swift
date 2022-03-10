@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var serverViewModel = ServerViewModel()
-    
+    // @ObservedObject var serverViewModel = ServerViewModel()
+    @EnvironmentObject var network : Network
     @State var tabIndex = 0
     
     var body: some View {
@@ -42,14 +42,19 @@ struct ContentView: View {
                     ItemAvailabilityView()
                 } else if tabIndex == 1 {
                     IMSView()
-                } else if tabIndex == 2{
+                } else if tabIndex == 2 {
                     LookupView()
                 }
                 Spacer()
+            } .onAppear {
+                network.getUsers()
             }
+            //            .refreshable {
+            //                await serverViewModel.updateALL()
+            //            }
             .background(Color.white)
             .frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
-                .padding(.horizontal, 12)
+            .padding(.horizontal, 12)
         }
     }
 }
@@ -58,5 +63,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Network())
     }
 }
