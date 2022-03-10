@@ -5,7 +5,7 @@ import json
 import urllib 
 
 
-db_filename = "./inventory.db"
+db_filename = "./store.db"
 
 conn = sqlite3.connect(db_filename, check_same_thread=False)
 c = conn.cursor()
@@ -25,6 +25,7 @@ def get_item():
         "Name": result[1],
         "QTY" : result[2],
         "Image": result[3],
+        "Threshold": result[4]
     })
 
 @app.route("/", methods=["GET"])
@@ -33,12 +34,13 @@ def get_all():
     Get item number from get request and return item info
     """
     #example: http://127.0.0.1:5000/
-    result = c.execute(f"SELECT SKU, Name, Quantity, ImagePath FROM Inventory").fetchall() #using item id from the get request
+    result = c.execute(f"SELECT * FROM Inventory").fetchall() #using item id from the get request
     results = str(list(map(lambda x: json.dumps({
         "SKU" : x[0],
         "Name": x[1],
         "QTY" : x[2],
         "Image": x[3],
+        "Threshold": x[4]
     }), result)))
     return results
 
@@ -58,6 +60,7 @@ def add_item():
             "Name": result[1],
             "QTY" : result[2],
             "Image": result[3],
+            "Threshold": result[4]
             }), 201
     return {"error": "Request must be JSON"}, 415
 
@@ -76,6 +79,7 @@ def update_item():
             "Name": result[1],
             "QTY" : result[2],
             "Image": result[3],
+            "Threshold": result[4]
             }), 201
     return {"error": "Request must be JSON"}, 415
 
