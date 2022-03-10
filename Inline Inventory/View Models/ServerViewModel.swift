@@ -13,10 +13,10 @@ class ServerViewModel: ObservableObject {
     
     //MARK: Connection to the model
     @Published var items = [StoreItem]()
-    
+    private let backgroundTaskID = "com.nobos.backgroundFetch"
     //MARK: Func to connect to the database API
     func fetchStoreData() {
-      let api = " http://127.0.0.1:5000/" 
+      let api = "http://127.0.0.1:5000/" 
       guard let url = URL(string: api) else { return }
       URLSession.shared.dataTask(with: url) { (data, response, error) in
         do {
@@ -33,6 +33,8 @@ class ServerViewModel: ObservableObject {
         }
        }.resume()
     }
+    
+    
     
     
 }

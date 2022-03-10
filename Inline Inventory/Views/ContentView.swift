@@ -31,7 +31,7 @@ struct ContentView: View {
                         Spacer()
                         Image("Starbucks-Logo")
                             .resizable()
-                            .frame(width: geo.size.width / 10, height: geo.size.height / 20)
+                            .frame(width: 100, height: 50)
                             .padding()
                     }
                 }
@@ -42,11 +42,13 @@ struct ContentView: View {
                     ItemAvailabilityView()
                 } else if tabIndex == 1 {
                     IMSView()
-                } else {
+                } else if tabIndex == 2{
                     LookupView()
                 }
                 Spacer()
-            }.frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
+            }
+            .background(Color.white)
+            .frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
                 .padding(.horizontal, 12)
         }
     }

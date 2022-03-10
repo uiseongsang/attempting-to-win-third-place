@@ -20,7 +20,9 @@ struct ItemAvailabilityView: View {
                 
             }.listStyle(GroupedListStyle())
             
-        }.onAppear(perform: {
+        }
+        .background(Color.red)
+        .onAppear(perform: {
             serverViewModel.fetchStoreData()
         })
     }
