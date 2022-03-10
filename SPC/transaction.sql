@@ -6,4 +6,4 @@ CREATE TABLE [Transaction] (
 	[Date] NVARCHAR(50)  NOT NULL
 ); 
 
-INSERT INTO Transaction VALUES(1, 2 , 3 , 'POS', '03-09-22);
+INSERT INTO Transaction VALUES(1, 2 , 3 , 'POS', '03-09-22');
