@@ -1,0 +1,9 @@
+CREATE TABLE [Transaction] ( 
+	[UserID] INTEGER  NOT NULL PRIMARY KEY, 
+	[SKU] INTEGER  NOT NULL,
+	[Quantity] INTEGER  NOT NULL,
+	[Order_type] NVARCHAR(50) NOT NULL,
+	[Date] NVARCHAR(50)  NOT NULL
+); 
+
+INSERT INTO Transaction VALUES(1, 2 , 3 , 'POS', '03-09-22);
