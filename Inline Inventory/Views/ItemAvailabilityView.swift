@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct ItemAvailabilityView: View {
-    @ObservedObject var serverViewModel = ServerViewModel()
+    @EnvironmentObject var network: Network
     
     var body: some View {
         
         VStack {
-            List(serverViewModel.items, id: \.id) { item in
-                HStack(alignment: .center) {
-                    Text(item.name + String(item.id) + String(item.quantity))
+            VStack(alignment: .leading) {
+                ForEach(network.storeProduct) { user in
+                    HStack(alignment:.top) {
+                        Text("\(user.QTY)")
+                        
+                    }
+                    //            .background(Color.red)
+                    //            .onAppear(perform: {
+                    //                network.fetchStoreData()
+                    //            })
                 }
-                
-            }.listStyle(GroupedListStyle())
-            
-        }.onAppear(perform: {
-            serverViewModel.fetchStoreData()
-        })
+            }.onAppear {
+                network.getUsers()
+        }
+        }
     }
 }
 
@@ -30,5 +35,6 @@ struct ItemAvailabilityView: View {
 struct ItemAvailabilityView_Previews: PreviewProvider {
     static var previews: some View {
         ItemAvailabilityView()
+            .environmentObject(Network())
     }
 }

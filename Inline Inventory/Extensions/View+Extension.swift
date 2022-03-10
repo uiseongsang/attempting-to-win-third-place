@@ -7,12 +7,13 @@
 
 import Foundation
 import SwiftUI
-
+//MARK: Creates an extension of View to create a border
 extension View {
     func border(width: CGFloat, edges: [Edge], color: SwiftUI.Color) -> some View {
         overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
     }
 }
+
 struct EdgeBorder: Shape {
     
     var width: CGFloat

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var serverViewModel = ServerViewModel()
-    
+    // @ObservedObject var serverViewModel = ServerViewModel()
+    @EnvironmentObject var network : Network
     @State var tabIndex = 0
     
     var body: some View {
@@ -31,7 +31,7 @@ struct ContentView: View {
                         Spacer()
                         Image("Starbucks-Logo")
                             .resizable()
-                            .frame(width: geo.size.width / 10, height: geo.size.height / 20)
+                            .frame(width: 100, height: 50)
                             .padding()
                     }
                 }
@@ -42,12 +42,19 @@ struct ContentView: View {
                     ItemAvailabilityView()
                 } else if tabIndex == 1 {
                     IMSView()
-                } else {
+                } else if tabIndex == 2 {
                     LookupView()
                 }
                 Spacer()
-            }.frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
-                .padding(.horizontal, 12)
+            } .onAppear {
+                network.getUsers()
+            }
+            //            .refreshable {
+            //                await serverViewModel.updateALL()
+            //            }
+            .background(Color.white)
+            .frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
+            .padding(.horizontal, 12)
         }
     }
 }
@@ -56,5 +63,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Network())
     }
 }

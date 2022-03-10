@@ -8,10 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct StoreItem: Identifiable, Codable {
-    var id: Int
-    let name: String
-    let quantity: Int
-    let productImage: String?
-    let available: Bool
+
+struct StoreItem:Identifiable, Decodable {
+    var id: Int?
+    var SKU: Int
+    var QTY: Int
+    var Image: String
+    var Threshold: Int
 }
