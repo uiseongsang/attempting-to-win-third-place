@@ -1,5 +1,5 @@
 # server.py
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, render_template
 import sqlite3
 import json
 import urllib 
@@ -10,7 +10,12 @@ db_filename = "./store.db"
 conn = sqlite3.connect(db_filename, check_same_thread=False)
 c = conn.cursor()
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
+
+@app.route("/home")
+def home():
+    result = c.execute(f"SELECT SKU, Name, Quantity, ImagePath, Threshold FROM Inventory").fetchall()
+    return render_template("UI/index.html", items=result)
 
 @app.route("/item", methods=["GET"])
 def get_item():
