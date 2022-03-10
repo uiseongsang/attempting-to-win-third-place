@@ -26,9 +26,9 @@
 
   <body>
     <!-- Header -->
-    <div class="d-flex p-3 mb-2 bg-success text-white" id="header">
+    <div class="d-flex p-4 mb-2 bg-success text-white" id="header">
       <div class="me-auto">
-        <div><h1 class="pt-1">Inventory Management</h1></div>
+        <div><h1 class="pt-1 ms-4">Inventory Management</h1></div>
       </div>
       <div class="d-flex flex-row-reverse">
         <div>
@@ -46,7 +46,7 @@
       <!-- Tabs -->
       <div class="nav nav-tabs pt-3" id="nav-tab" role="tablist">
         <button
-          class="nav-link active"
+          class="nav-link active link-success"
           id="nav-item-availability-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-item-availability"
@@ -58,7 +58,7 @@
           Item Availability
         </button>
         <button
-          class="nav-link"
+          class="nav-link link-success"
           id="nav-ims-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-ims"
@@ -70,7 +70,7 @@
           IMS
         </button>
         <button
-          class="nav-link"
+          class="nav-link link-success"
           id="nav-merch-lookup-tab"
           data-bs-toggle="tab"
           data-bs-target="#nav-merch-lookup"
@@ -136,15 +136,19 @@
         role="tabpanel"
         aria-labelledby="nav-merch-lookup-tab"
       >
-        <form class="d-flex p-3">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Enter SKU"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="container">
+          <form class="d-flex p-2">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Enter SKU"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </body>
