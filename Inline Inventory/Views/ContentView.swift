@@ -36,13 +36,14 @@ struct ContentView: View {
                     }
                 }
                 
+                //MARK: Main Controller view when opening app
                 CustomTabbedView(tabIndex: $tabIndex)
                 if tabIndex == 0 {
                     ItemAvailabilityView()
                 } else if tabIndex == 1 {
                     IMSView()
                 } else {
-                    SearchView()
+                    LookupView()
                 }
                 Spacer()
             }.frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
