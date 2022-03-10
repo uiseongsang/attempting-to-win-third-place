@@ -98,7 +98,7 @@
       >
         <!-- Table of food items -->
         <div class="container">
-          <div class="container shadow">
+          <div class="container shadow" id="availability-container">
             <div class="row">
               <div class="col-3 fw-bold border p-3 text-center">Image</div>
               <div class="col-5 fw-bold border p-3 text-center">Name</div>
@@ -128,7 +128,7 @@
             <button
               type="button"
               class="btn btn-outline-danger flex-fill"
-              id="mop-toggle"
+              id="mop-toggle-btn"
             >
               Turn off on MO&P
             </button>
@@ -162,7 +162,7 @@
         </div>
 
         <!-- Table -->
-        <div class="container shadow">
+        <div class="container shadow" id="ims-container">
           <!-- Top row -->
           <div class="row">
             <div class="col-3 fw-bold border p-3 text-center">On Hand Qty</div>
@@ -210,6 +210,7 @@
               type="search"
               placeholder="Enter SKU"
               aria-label="Search"
+              id="merch-search-input"
             />
             <!-- Search Button -->
             <button
