@@ -99,7 +99,7 @@
       >
         <!-- Table of food items -->
         <div class="container">
-          <div class="container">
+          <div class="container shadow">
             <div class="row">
               <div class="col-2 fw-bold border p-2">SKU</div>
               <div class="col-5 fw-bold border p-2">Name</div>
@@ -127,22 +127,53 @@
           </div>
         </div>
       </div>
+
       <!-- IMS -->
+      <!-- Tab -->
       <div
         class="tab-pane fade"
         id="nav-ims"
         role="tabpanel"
         aria-labelledby="nav-ims-tab"
       >
-        <div class="container">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            placeat alias, sapiente qui eos maxime aut quo nesciunt rem eaque,
-            provident magni voluptatum quasi officia eius. Rerum eveniet quis
-            eum?
-          </p>
+        <!-- Base Container -->
+        <div class="d-flex p-2 ms-5 me-5 justify-content-start flex-column">
+          <!-- Top row -->
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item fw-bold text-center pt-3 ps-5 flex-fill">
+              On Hand Qty
+            </li>
+            <li class="list-group-item fw-bold text-center pt-3 flex-fill">
+              On order
+            </li>
+            <li class="list-group-item fw-bold text-center pt-3 flex-fill">
+              Par
+            </li>
+            <li class="list-group-item fw-bold text-center pt-3 flex-fill">
+              Order Qty
+            </li>
+          </ul>
+
+          <!-- Second Row -->
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item flex-fill">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="On Hand Qty"
+                  id="on-hand-input"
+                  style="margin: 0px"
+                ></textarea>
+                <label for="on-hand-input">On Hand Qty</label>
+              </div>
+            </li>
+            <li class="list-group-item text-center pt-4 flex-fill">18</li>
+            <li class="list-group-item text-center pt-4 flex-fill">24</li>
+            <li class="list-group-item text-center pt-4 flex-fill">12</li>
+          </ul>
         </div>
       </div>
+
       <!-- Merch Lookup -->
       <div
         class="tab-pane fade"
