@@ -5,6 +5,25 @@ CREATE TABLE [Inventory] (
 	[ImagePath] NVARCHAR(50) NOT NULL,
 	[Threshold] INTEGER  NOT NULL
 ); 
+CREATE TABLE [Orders] ( 
+	[OrderID] INTEGER  NOT NULL PRIMARY KEY, 
+	[VendorID] INTEGER  NOT NULL,
+  	[SKU] INTEGER  NOT NULL,
+	[Quantity] INTEGER  NOT NULL,
+  FOREIGN KEY (SKU) REFERENCES Inventory
+); 
+CREATE TABLE [Transactions] ( 
+	[UserID] INTEGER  NOT NULL PRIMARY KEY, 
+	[SKU] INTEGER  NOT NULL,
+	[Quantity] INTEGER  NOT NULL,
+	[Order_type] NVARCHAR(50) NOT NULL,
+	[Date] NVARCHAR(50)  NOT NULL,
+	FOREIGN KEY (SKU) REFERENCES Inventory
+); 
+
+INSERT INTO Transactions VALUES(1, 2 , 3 , 'POS', '03-09-22');
+
+INSERT INTO Orders VALUES(1, 65, 10, 50);
 
 INSERT INTO Inventory VALUES(1, 'Bacon, Gouda & Egg Sandwich', 100, 'Hot Breakfast/Breakfast Sandwiches & Wraps/Bacon, Gouda & Egg Sandwich.png', 5);
 INSERT INTO Inventory VALUES(2, 'Double-Smoked Bacon, Cheddar & Egg Sandwich', 100, 'Hot Breakfast/Breakfast Sandwiches & Wraps/Double-Smoked Bacon, Cheddar & Egg Sandwich.png', 5);
