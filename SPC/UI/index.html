@@ -89,10 +89,10 @@
     </nav>
 
     <!-- TAB CONTENT -->
-    <div class="tab-content pt-5" id="nav-tabContent">
+    <div class="tab-content" id="nav-tabContent">
       <!-- Item Availability -->
       <div
-        class="tab-pane fade show active"
+        class="tab-pane fade show active pt-5"
         id="nav-item-availability"
         role="tabpanel"
         aria-labelledby="nav-item-availability-tab"
@@ -131,23 +131,35 @@
       <!-- IMS -->
       <!-- Tab -->
       <div
-        class="tab-pane fade"
+        class="tab-pane fade pt-4"
         id="nav-ims"
         role="tabpanel"
         aria-labelledby="nav-ims-tab"
       >
+        <!-- Save and Approve Buttons -->
+        <div class="container mb-4 d-flex flex-row-reverse">
+          <button type="button" class="btn btn-lg btn-outline-primary m-1">
+            Approve
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-lg m-1">
+            Save
+          </button>
+        </div>
+
         <!-- Table -->
         <div class="container">
           <!-- Top row -->
           <div class="row">
-            <div class="col-3 fw-bold border p-2">On Hand Qty</div>
-            <div class="col-3 fw-bold border p-2">Item</div>
-            <div class="col-2 fw-bold border p-2">On Order</div>
-            <div class="col-2 fw-bold border p-2">Par</div>
-            <div class="col-2 fw-bold border p-2">Order Qty</div>
+            <div class="col-3 fw-bold border p-3 text-center">On Hand Qty</div>
+            <div class="col-3 fw-bold border p-3 text-center">Item</div>
+            <div class="col-2 fw-bold border p-3 text-center">On Order</div>
+            <div class="col-2 fw-bold border p-3 text-center">Par</div>
+            <div class="col-2 fw-bold border p-3 text-center">Order Qty</div>
           </div>
+
           <!-- Second Row -->
           <div class="row">
+            <!-- On Hand Qty Input Form -->
             <div class="col-3 border p-2">
               <div class="form-floating">
                 <textarea
@@ -159,17 +171,17 @@
                 <label for="on-hand-input">On Hand Qty</label>
               </div>
             </div>
-            <div class="col-3 border p-2">Vanilla Syrup</div>
-            <div class="col-2 border p-2">18</div>
-            <div class="col-2 border p-2">24</div>
-            <div class="col-2 border p-2">12</div>
+            <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+            <div class="col-2 border p-4 text-center">18</div>
+            <div class="col-2 border p-4 text-center">24</div>
+            <div class="col-2 border p-4 text-center">12</div>
           </div>
         </div>
       </div>
 
       <!-- Merch Lookup -->
       <div
-        class="tab-pane fade"
+        class="tab-pane fade pt-5"
         id="nav-merch-lookup"
         role="tabpanel"
         aria-labelledby="nav-merch-lookup-tab"
