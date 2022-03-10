@@ -136,27 +136,19 @@
         role="tabpanel"
         aria-labelledby="nav-ims-tab"
       >
-        <!-- Base Container -->
-        <div class="d-flex p-2 ms-5 me-5 justify-content-start flex-column">
+        <!-- Table -->
+        <div class="container">
           <!-- Top row -->
-          <ul class="list-group list-group-horizontal">
-            <li class="list-group-item fw-bold text-center pt-3 ps-5 flex-fill">
-              On Hand Qty
-            </li>
-            <li class="list-group-item fw-bold text-center pt-3 flex-fill">
-              On order
-            </li>
-            <li class="list-group-item fw-bold text-center pt-3 flex-fill">
-              Par
-            </li>
-            <li class="list-group-item fw-bold text-center pt-3 flex-fill">
-              Order Qty
-            </li>
-          </ul>
-
+          <div class="row">
+            <div class="col-3 fw-bold border p-2">On Hand Qty</div>
+            <div class="col-3 fw-bold border p-2">Item</div>
+            <div class="col-2 fw-bold border p-2">On Order</div>
+            <div class="col-2 fw-bold border p-2">Par</div>
+            <div class="col-2 fw-bold border p-2">Order Qty</div>
+          </div>
           <!-- Second Row -->
-          <ul class="list-group list-group-horizontal">
-            <li class="list-group-item flex-fill">
+          <div class="row">
+            <div class="col-3 border p-2">
               <div class="form-floating">
                 <textarea
                   class="form-control"
@@ -166,13 +158,13 @@
                 ></textarea>
                 <label for="on-hand-input">On Hand Qty</label>
               </div>
-            </li>
-            <li class="list-group-item text-center pt-4 flex-fill">18</li>
-            <li class="list-group-item text-center pt-4 flex-fill">24</li>
-            <li class="list-group-item text-center pt-4 flex-fill">12</li>
-          </ul>
+            </div>
+            <div class="col-3 border p-2">Vanilla Syrup</div>
+            <div class="col-2 border p-2">18</div>
+            <div class="col-2 border p-2">24</div>
+            <div class="col-2 border p-2">12</div>
+          </div>
         </div>
-      </div>
 
       <!-- Merch Lookup -->
       <div
