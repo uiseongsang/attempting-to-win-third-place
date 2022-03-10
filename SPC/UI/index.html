@@ -31,9 +31,9 @@
         <!-- Title -->
         <div><h1 class="pt-2 ms-4">Inventory Management</h1></div>
       </div>
+      <!-- Logo -->
       <div class="d-flex flex-row-reverse">
         <div>
-          <!-- Logo -->
           <img
             src="/Image/UI/Starbucks-Logo.png"
             alt="logo"
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <!-- NAVIGATION -->
+    <!-------------- NAVIGATION ---------------->
     <nav>
       <!-- Tabs -->
       <div class="nav nav-tabs pt-3" id="nav-tab" role="tablist">
@@ -88,9 +88,9 @@
       </div>
     </nav>
 
-    <!-- TAB CONTENT -->
+    <!--------------- TAB CONTENT ---------------->
     <div class="tab-content" id="nav-tabContent">
-      <!-- Item Availability -->
+      <!------ ITEM AVAILABILITY ------>
       <div
         class="tab-pane fade show active pt-5"
         id="nav-item-availability"
@@ -101,39 +101,43 @@
         <div class="container">
           <div class="container shadow">
             <div class="row">
-              <div class="col-3 fw-bold border p-2 text-center">Image</div>
-              <div class="col-5 fw-bold border p-2 text-center">Name</div>
-              <div class="col-2 fw-bold border p-2 text-center">Qty</div>
-              <div class="col-2 fw-bold border p-2 text-center">Threshold</div>
+              <div class="col-3 fw-bold border p-3 text-center">Image</div>
+              <div class="col-5 fw-bold border p-3 text-center">Name</div>
+              <div class="col-2 fw-bold border p-3 text-center">Qty</div>
+              <div class="col-2 fw-bold border p-3 text-center">Threshold</div>
             </div>
             <div class="row">
               <!-- {% for row in items %} -->
-              <div class="col-3 border p-2 text-center">
+              <div class="col-3 border p-3 text-center">
                 <img src="{{row[3]}}" alt="food" height="50" width="50" />
               </div>
-              <div class="col-5 fw-bold border p-2 text-center">
+              <div class="col-5 fw-bold border p-4 text-center">
                 {{ row[1] }}
               </div>
-              <div class="col-2 fw-bold border p-2 text-center">
+              <div class="col-2 fw-bold border p-4 text-center">
                 {{ row[2] }}
               </div>
-              <div class="col-2 fw-bold border p-2 text-center">
+              <div class="col-2 fw-bold border p-4 text-center">
                 {{ row[4] }}
               </div>
               <!-- {% endfor %} -->
             </div>
           </div>
+
           <!-- Button to toggle items on and off -->
           <div class="d-flex mt-4">
-            <button type="button" class="btn btn-outline-danger flex-fill">
+            <button
+              type="button"
+              class="btn btn-outline-danger flex-fill"
+              id="mop-toggle"
+            >
               Turn off on MO&P
             </button>
           </div>
         </div>
       </div>
 
-      <!-- IMS -->
-      <!-- Tab -->
+      <!------ IMS ------>
       <div
         class="tab-pane fade pt-4"
         id="nav-ims"
@@ -142,10 +146,18 @@
       >
         <!-- Save and Approve Buttons -->
         <div class="container mb-4 d-flex flex-row-reverse">
-          <button type="button" class="btn btn-lg btn-outline-primary m-1">
+          <button
+            type="button"
+            class="btn btn-lg btn-outline-primary m-1"
+            id="ims-approve-btn"
+          >
             Approve
           </button>
-          <button type="button" class="btn btn-outline-secondary btn-lg m-1">
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-lg m-1"
+            id="ims-save-btn"
+          >
             Save
           </button>
         </div>
@@ -175,6 +187,7 @@
                 <label for="on-hand-input">On Hand Qty</label>
               </div>
             </div>
+
             <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
             <div class="col-2 border p-4 text-center">18</div>
             <div class="col-2 border p-4 text-center">24</div>
@@ -183,13 +196,14 @@
         </div>
       </div>
 
-      <!-- Merch Lookup -->
+      <!------ MERCH LOOKUP ------>
       <div
         class="tab-pane fade pt-5"
         id="nav-merch-lookup"
         role="tabpanel"
         aria-labelledby="nav-merch-lookup-tab"
       >
+        <!-- Search bar -->
         <div class="container">
           <form class="d-flex p-2">
             <input
@@ -198,7 +212,12 @@
               placeholder="Enter SKU"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <!-- Search Button -->
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              id="merch-search-btn"
+            >
               Search
             </button>
           </form>
