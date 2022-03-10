@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchView: View {
+struct LookupView: View {
     
     @State var searchText = ""
     @ObservedObject var serverViewModel = ServerViewModel()
@@ -24,10 +24,11 @@ struct SearchView: View {
     }
 }
 
+//TODO: Create a table instead of a list 
 
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        LookupView()
     }
 }
