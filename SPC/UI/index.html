@@ -28,18 +28,24 @@
     <!-- Header -->
     <div class="d-flex p-4 mb-2 bg-success text-white" id="header">
       <div class="me-auto">
-        <div><h1 class="pt-1 ms-4">Inventory Management</h1></div>
+        <!-- Title -->
+        <div><h1 class="pt-2 ms-4">Inventory Management</h1></div>
       </div>
       <div class="d-flex flex-row-reverse">
         <div>
+          <!-- Logo -->
           <img
-            src="http://127.0.0.1:5000/image?path=UI/Starbucks-Logo.png"
-            alt="logo" height=75 width=120 \>
+            src="/Image/UI/Starbucks-Logo.png"
+            alt="logo"
+            height="70"
+            width="120"
+            \
+          />
         </div>
       </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav>
       <!-- Tabs -->
       <div class="nav nav-tabs pt-3" id="nav-tab" role="tablist">
@@ -82,7 +88,7 @@
       </div>
     </nav>
 
-    <!-- Tab Content -->
+    <!-- TAB CONTENT -->
     <div class="tab-content pt-5" id="nav-tabContent">
       <!-- Item Availability -->
       <div
@@ -93,27 +99,25 @@
       >
         <!-- Table of food items -->
         <div class="container">
-            <div class="container">
-                <div class="row">
-                  <div class="col-3 fw-bold border p-2">SKU</div>
-                  <div class="col-6 fw-bold border p-2">Name</div>
-                  <div class="col-1 fw-bold border p-2">Qty</div>
-                  <div class="col-1 fw-bold border p-2">Image</div>
-                  <div class="col-1 fw-bold border p-2">Threshold</div>
-                </div>
-                <div class="row">
-                    {% for row in items %}
-                    <div class="col-3 fw-bold border p-2"> {{ row[0] }}</div>
-                    <div class="col-6 fw-bold border p-2"> {{ row[1] }}</div>
-                    <div class="col-1 fw-bold border p-2"> {{ row[2] }}</div>
-                    <div class="col-1">
-                      <img 
-                        src= {{row[3]}}
-                        alt="food" height=50 width=50 >
-                    </div>
-                    <div class="col-1 fw-bold border p-2"> {{ row[4] }}</div>
-                  {% endfor %}
-                </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-2 fw-bold border p-2">SKU</div>
+              <div class="col-5 fw-bold border p-2">Name</div>
+              <div class="col-1 fw-bold border p-2">Qty</div>
+              <div class="col-2 fw-bold border p-2">Image</div>
+              <div class="col-2 fw-bold border p-2">Threshold</div>
+            </div>
+            <div class="row">
+              <!-- {% for row in items %} -->
+              <div class="col-2 fw-bold border p-2">{{ row[0] }}</div>
+              <div class="col-5 fw-bold border p-2">{{ row[1] }}</div>
+              <div class="col-1 fw-bold border p-2">{{ row[2] }}</div>
+              <div class="col-2 border p-2">
+                <img src="{{row[3]}}" alt="food" height="50" width="50" />
+              </div>
+              <div class="col-2 fw-bold border p-2">{{ row[4] }}</div>
+              <!-- {% endfor %} -->
+            </div>
           </div>
           <!-- Button to toggle items on and off -->
           <div class="d-flex mt-4">
