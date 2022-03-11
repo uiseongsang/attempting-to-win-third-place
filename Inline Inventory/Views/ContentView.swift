@@ -47,11 +47,8 @@ struct ContentView: View {
                 }
                 Spacer()
             } .onAppear {
-                network.getUsers()
+                network.getProduct()
             }
-            //            .refreshable {
-            //                await serverViewModel.updateALL()
-            //            }
             .background(Color.white)
             .frame(width: UIScreen.main.bounds.width - 24, alignment: .center)
             .padding(.horizontal, 12)
