@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Inventory Management</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript -->
+    <script src="app.js" async></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!------------ HEADER ------------>
+    <div class="d-flex p-4 mb-2 bg-success text-white" id="header">
+      <div class="me-auto">
+        <!-- Title -->
+        <div><h1 class="pt-2 ms-4">Inventory Management</h1></div>
+      </div>
+      <!-- Logo -->
+      <div class="d-flex flex-row-reverse">
+        <div>
+          <img
+            src="images/Starbucks-Logo.png"
+            alt="logo"
+            height="70"
+            width="120"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-------------- NAVIGATION ---------------->
+    <nav>
+      <!-- Tabs -->
+      <div class="nav nav-tabs pt-3" id="nav-tab" role="tablist">
+        <button
+          class="nav-link active link-success"
+          id="nav-item-availability-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-item-availability"
+          type="button"
+          role="tab"
+          aria-controls="nav-item-availability"
+          aria-selected="true"
+        >
+          Item Availability
+        </button>
+        <button
+          class="nav-link link-success"
+          id="nav-ims-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-ims"
+          type="button"
+          role="tab"
+          aria-controls="nav-ims"
+          aria-selected="false"
+        >
+          IMS
+        </button>
+        <button
+          class="nav-link link-success"
+          id="nav-merch-lookup-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-merch-lookup"
+          type="button"
+          role="tab"
+          aria-controls="nav-merch-lookup"
+          aria-selected="false"
+        >
+          Merch Lookup
+        </button>
+      </div>
+    </nav>
+
+    <!--------------- TAB CONTENT ---------------->
+    <div class="tab-content" id="nav-tabContent">
+      <!------ ITEM AVAILABILITY ------>
+      <div
+        class="tab-pane fade show active pt-4"
+        id="nav-item-availability"
+        role="tabpanel"
+        aria-labelledby="nav-item-availability-tab"
+      >
+        <!-- Table of food items -->
+        <div class="container">
+          <div class="container shadow p-0" id="availability-container">
+            <!-- Row One -->
+            <div class="row m-0 bg-secondary bg-opacity-10">
+              <div class="col-3 fw-bold border p-3 text-center">Image</div>
+              <div class="col-5 fw-bold border p-3 text-center">Name</div>
+              <div class="col-2 fw-bold border p-3 text-center">Qty</div>
+              <div class="col-2 fw-bold border p-3 text-center">Threshold</div>
+            </div>
+
+            <div class="container overflow-auto" style="height: 800px">
+              <!-- Row Two -->
+              <div class="row">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded"
+                    src="images/Breakfast Sandwiches & Wraps/Bacon, Gouda & Egg Sandwich.png"
+                    alt="food"
+                    height="83"
+                    width="110"
+                  />
+                </div>
+                <div class="col-5 border p-5 text-center">
+                  Bacon, Gouda, and Egg
+                </div>
+                <div class="col-2 border p-5 text-center">45</div>
+                <div class="col-2 border p-5 text-center">8</div>
+              </div>
+
+              <!-- Row Three -->
+              <div class="row">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded"
+                    src="images/Breakfast Sandwiches & Wraps/Double-Smoked Bacon, Cheddar & Egg Sandwich.png"
+                    alt="food"
+                    height="83"
+                    width="110"
+                  />
+                </div>
+                <div class="col-5 border p-5 text-center">
+                  Double-Smoked Bacon and Egg
+                </div>
+                <div class="col-2 border p-5 text-center">23</div>
+                <div class="col-2 border p-5 text-center">5</div>
+              </div>
+
+              <!-- Row Four -->
+              <div class="row">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded text-center"
+                    src="images/Breakfast Sandwiches & Wraps/Impossible™ Breakfast Sandwich.png"
+                    alt="food"
+                    height="83"
+                    width="110"
+                  />
+                </div>
+                <div class="col-5 border p-5 text-center">
+                  Impossible™ Breakfast Sandwich
+                </div>
+                <div class="col-2 border p-5 text-center">13</div>
+                <div class="col-2 border p-5 text-center">4</div>
+              </div>
+
+              <!-- Row Five -->
+              <div class="row bg-danger bg-opacity-50">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded opacity-50"
+                    src="images/Breakfast Sandwiches & Wraps/Spinach, Feta & Egg White Wrap.png"
+                    alt="food"
+                    height="83"
+                    width="110"
+                  />
+                </div>
+                <div
+                  class="col-5 border d-flex justify-content-start align-items-center"
+                >
+                  <svg
+                    src="/images/exclamation-triangle.svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 pb-1"
+                    viewBox="0 0 16 16"
+                    role="img"
+                    aria-label="Warning:"
+                    style="color: #dc3535"
+                  >
+                    <path
+                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                    />
+                  </svg>
+                  Spinach, Feta, & Egg White Wrap
+                </div>
+                <div class="col-2 border p-5 text-center">0</div>
+                <div class="col-2 border p-5 text-center">6</div>
+              </div>
+
+              <!-- Row Six -->
+              <div class="row">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded"
+                    src="images/Muffins & Scones/Blueberry Muffin.png"
+                    alt="food"
+                    height="95"
+                    width="110"
+                  />
+                </div>
+                <div class="col-5 border p-5 text-center">Blueberry Muffin</div>
+                <div class="col-2 border p-5 text-center">15</div>
+                <div class="col-2 border p-5 text-center">3</div>
+              </div>
+
+              <!-- Row Seven -->
+              <div class="row bg-warning bg-opacity-50">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded"
+                    src="images/Muffins & Scones/Petite Vanilla Bean Scone.png"
+                    alt="food"
+                    height="83"
+                    width="112"
+                  />
+                </div>
+                <div
+                  class="col-5 border d-flex justify-content-start align-items-center"
+                >
+                  <svg
+                    src="/images/exclamation-triangle.svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 pb-1"
+                    viewBox="0 0 16 16"
+                    role="img"
+                    aria-label="Warning:"
+                    style="color: #ffc107"
+                  >
+                    <path
+                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                    />
+                  </svg>
+                  Petite Vanilla Bean Scone
+                </div>
+                <div class="col-2 border p-5 text-center">6</div>
+                <div class="col-2 border p-5 text-center">4</div>
+              </div>
+
+              <!-- Row Eight -->
+              <div class="row">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded"
+                    src="images/Breakfast Sandwiches & Wraps/Turkey Bacon, Cheddar & Egg White Sandwich.png"
+                    alt="food"
+                    height="95"
+                    width="110"
+                  />
+                </div>
+                <div class="col-5 border p-5 text-center">
+                  Turkey Bacon, Cheddar & Egg White Sandwich
+                </div>
+                <div class="col-2 border p-5 text-center">21</div>
+                <div class="col-2 border p-5 text-center">6</div>
+              </div>
+
+              <!-- Row Nine -->
+              <div class="row bg-warning bg-opacity-50">
+                <div
+                  class="col-3 border d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    class="rounded"
+                    src="images/Muffins & Scones/Blueberry Scone.png"
+                    alt="food"
+                    height="80"
+                    width="115"
+                  />
+                </div>
+                <div
+                  class="col-5 border d-flex justify-content-start align-items-center"
+                >
+                  <svg
+                    src="/images/exclamation-triangle.svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 pb-1"
+                    viewBox="0 0 16 16"
+                    role="img"
+                    aria-label="Warning:"
+                    style="color: #ffc107"
+                  >
+                    <path
+                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                    />
+                  </svg>
+                  <p class="pt-3 ms-2">Blueberry Scone</p>
+                </div>
+                <div class="col-2 border p-5 text-center">4</div>
+                <div class="col-2 border p-5 text-center">2</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button to toggle items on and off -->
+          <div class="d-flex mt-4">
+            <button
+              type="button"
+              class="btn btn-outline-danger flex-fill"
+              id="mop-toggle-btn"
+            >
+              Turn off on MO&P
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!------ IMS ------>
+      <div
+        class="tab-pane fade pt-4"
+        id="nav-ims"
+        role="tabpanel"
+        aria-labelledby="nav-ims-tab"
+      >
+        <!-- Save and Approve Buttons -->
+        <div class="container mb-4 d-flex flex-row-reverse">
+          <button
+            type="button"
+            class="btn btn-lg btn-outline-primary m-1"
+            id="ims-approve-btn"
+          >
+            Approve
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-lg m-1"
+            id="ims-save-btn"
+          >
+            Save
+          </button>
+        </div>
+
+        <!-- Table -->
+        <div class="container shadow p-0 bg-light" id="ims-container">
+          <!-- Top row -->
+          <div class="row m-0 bg-secondary bg-opacity-10" style="width: 720px">
+            <div class="col-3 fw-bold border p-3 text-center">On Hand Qty</div>
+            <div class="col-3 fw-bold border p-3 text-center">Item</div>
+            <div class="col-2 fw-bold border p-3 text-center">On Order</div>
+            <div class="col-2 fw-bold border p-3 text-center">Par</div>
+            <div class="col-2 fw-bold border p-3 text-center">Order Qty</div>
+          </div>
+
+          <div class="container overflow-auto" style="height: 800px">
+            <!-- Second Row -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Three -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Four -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Five -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Six -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Seven -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Eight -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Nine -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Ten -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Eleven -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+
+            <!-- Row Twelve -->
+            <div class="row">
+              <!-- On Hand Qty Input Form -->
+              <div class="col-3 border p-2">
+                <div class="form-label">
+                  <textarea
+                    class="form-control"
+                    id="on-hand-input"
+                    style="margin: 0px"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="col-3 border p-4 text-center">Vanilla Syrup</div>
+              <div class="col-2 border p-4 text-center">18</div>
+              <div class="col-2 border p-4 text-center">24</div>
+              <div class="col-2 border p-4 text-center">12</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!------ MERCH LOOKUP ------>
+      <div
+        class="tab-pane fade pt-5"
+        id="nav-merch-lookup"
+        role="tabpanel"
+        aria-labelledby="nav-merch-lookup-tab"
+      >
+        <!-- Search bar -->
+        <div class="container">
+          <form class="d-flex p-2">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Enter SKU"
+              aria-label="Search"
+              id="merch-search-input"
+            />
+            <!-- Search Button -->
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              id="merch-search-btn"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
