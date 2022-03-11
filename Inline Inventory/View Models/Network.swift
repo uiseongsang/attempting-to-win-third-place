@@ -11,7 +11,7 @@ import SwiftUI
 
 class Network: ObservableObject {
     @Published var storeProduct: [StoreItem] = []
-    
+ 
     func getUsers() {
         guard let url = URL(string: "https://slimyraccoon.pythonanywhere.com") else { fatalError("Missing URL") }
         
@@ -31,8 +31,10 @@ class Network: ObservableObject {
                 guard let data = data else { return }
                 DispatchQueue.main.async {
                     do {
-                        let decodedUsers = try JSONDecoder().decode([StoreItem].self, from: data)
-                        self.storeProduct = decodedUsers
+                        let decodedItems = try JSONDecoder().decode([StoreItem].self, from: data)
+                        self.storeProduct = decodedItems
+                        
+                        print(decodedItems)
                     } catch let DecodingError.dataCorrupted(context) {
                         print(context)
                     } catch let DecodingError.keyNotFound(key, context) {

@@ -11,25 +11,37 @@ struct ItemAvailabilityView: View {
     @EnvironmentObject var network: Network
     
     var body: some View {
+        HStack(spacing: 175) {
+            
+            Text("Name")
+                .offset(x: -5, y: 5)
+            Text("Qty")
+                .offset(x: 70, y: 5)
+            Text("Threshold")
+                .offset(x: 10, y: 5)
+        }.padding()
         
-        VStack {
-            VStack(alignment: .leading) {
-                ForEach(network.storeProduct) { user in
-                    HStack(alignment:.top) {
-                        Text("\(user.QTY)")
-                        
-                    }
-                    //            .background(Color.red)
-                    //            .onAppear(perform: {
-                    //                network.fetchStoreData()
-                    //            })
-                }
-            }.onAppear {
-                network.getUsers()
-        }
+        List (network.storeProduct) { user in
+            HStack(alignment:.top) {
+                
+                // Text("\(user.Image)")
+                Text("\(user.Name)")
+                    .padding()
+                Spacer()
+                Text("\(user.QTY)")
+                    .padding()
+                
+                Spacer()
+                Text("\(user.Threshold)")
+                    .padding()
+                Spacer()
+            }
+        }.onAppear {
+            network.getUsers()
         }
     }
 }
+
 
 
 struct ItemAvailabilityView_Previews: PreviewProvider {
