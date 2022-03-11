@@ -23,8 +23,6 @@ struct ItemAvailabilityView: View {
         
         List (network.storeProduct) { user in
             HStack(alignment:.top) {
-                
-                // Text("\(user.Image)")
                 Text("\(user.Name)")
                     .padding()
                 Spacer()
@@ -34,10 +32,11 @@ struct ItemAvailabilityView: View {
                 Spacer()
                 Text("\(user.Threshold)")
                     .padding()
-                Spacer()
+                
+               
             }
         }.onAppear {
-            network.getUsers()
+            network.getProduct()
         }
     }
 }
